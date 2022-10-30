@@ -1,0 +1,154 @@
+{% extends 'bagrat_grigorian/base.html' %}
+
+{% load static %}
+
+{% block head %} <link rel="stylesheet" href="{% static 'css/about.css' %}"> {% endblock %}
+
+{% block title %}About{% endblock title %}
+
+{% block menue1 %}style="color: rgba(33, 108, 255, 1); text-shadow: 0px 0px 20px rgb(89, 144, 253);"{% endblock menue1 %}
+
+{% block content %}
+
+<div class="_heder_block" style="background-image: url({% static 'img/about/Hedder.png' %});z-index: 0;">
+    <h1 data-aos="fade-right" class="hedder_h1" style="color: white; font-size: 64px; padding-top: 15%;"> Hey! I'm a </h1>
+    <p data-aos="fade-left" class="logo"> Bagrat Grigorian </p>
+</div>
+
+<div class="card" data-aos="fade-right">
+    <div class="card_default_block">
+        <div class="backgraund_block" style="background-image: url({% static 'img/about/about_block.png' %}); width: 451px; height:525px;">
+
+        </div>
+    </div>
+    <div class="card_content">
+        <p class="card_content_title">I’m a Web Developer</p>
+        <p>Junior Full-stack web developer</p>
+        <p class="card_content_info">Phone: +7(919)-422-23-97</p>
+        <p class="card_content_info">Telegram, WhatsApp:</p>
+        <p class="card_content_info">+7(919)-422-23-97</p>
+        <p class="card_content_info">Location: Saint-Petersburg</p>
+        <p class="card_content_info">Russia</p>
+        <button type="button" class="btn btn-outline-primary button_contact" onclick="location.href='contact';">Contact Me</button>
+    </div>
+</div>
+
+<div class="skills1">
+    <div data-aos="fade-right">
+        <span><nobr><img src="{% static 'img/about/icons/icons8-python2.png' %}"
+            style="width: 48px; object-fit: contain; margin: 0; margin-bottom: 20px; padding: 0;">
+                Python Django
+        </nobr></span>
+    </div>
+    <div data-aos="fade-down-right">
+        <span><nobr><img src="{% static 'img/about/icons/icons8-java2.png' %}"
+            style="width: 48px; object-fit: contain; margin: 0; margin-bottom: 20px; padding: 0;">
+                Java Script
+        </nobr></span>
+    </div>
+    <div data-aos="fade-down-left">
+        <span><nobr><img src="{% static 'img/about/icons/icons8-html-5-2.png' %}"
+            style="width: 48px; object-fit: contain; margin: 0; margin-bottom: 20px; padding: 0;">
+                HTML 5
+        </nobr></span>
+    </div>
+    <div data-aos="fade-left">
+        <span><nobr><img src="{% static 'img/about/icons/icons8-bootstrap-480-2.png' %}"
+            style="width: 48px; object-fit: contain; margin: 0; margin-bottom: 20px; padding: 0;">
+                BootStrap
+        </nobr></span>
+    </div>
+</div>
+<div class="skills2">
+    <div data-aos="fade-up-right">
+        <span><nobr><img src="{% static 'img/about/icons/icons8-css3-500-2.png' %}"
+            style="width: 48px; object-fit: contain; margin: 0; margin-bottom: 20px; padding: 0;">
+                CSS
+        </nobr></span>
+    </div>
+    <div data-aos="fade-up-left">
+        <span><nobr><img src="{% static 'img/about/icons/icons8-git-2.png' %}"
+            style="width: 48px; object-fit: contain; margin: 0; margin-bottom: 20px; padding: 0;">
+                GIT
+        </nobr></span>
+    </div>
+</div>
+
+<p class="border_skills"></p>
+
+<div class="recent_works_block">
+    <p class="recent_works_title">Check My Recent Works!</p>
+
+    <div class="tile_block_main">
+        <div class="tile_image_main">
+            {% for portfolio in image.img %}
+                {% if portfolio == image.img.0 %}
+                    <div class="tile">
+                        <figure class="tile_image_block" data-aos="fade-right">
+                            <img src="{{ portfolio.title_img.url }}" title="{{ portfolio.title }}" onclick="location.href='{{ portfolio.url }}';">
+                        </figure>
+                        <p class="tile_text" onclick="location.href='{{ portfolio.url }}';" data-aos="fade-up-right">{{ portfolio.title }}</p>
+                    </div>
+                {% endif %}
+                {% if portfolio == image.img.1 %}
+                    <div class="tile">
+                        <figure class="tile_image_block" data-aos="fade-down">
+                            <img src="{{ portfolio.title_img.url }}" title="{{ portfolio.title }}" onclick="location.href='{{ portfolio.url }}';">
+                        </figure>
+                        <p class="tile_text" onclick="location.href='{{ portfolio.url }}';" data-aos="fade-up">{{ portfolio.title }}</p>
+                    </div>
+                {% endif %}
+                {% if portfolio == image.img.2 %}
+                    <div class="tile">
+                        <figure class="tile_image_block" data-aos="fade-left">
+                            <img src="{{ portfolio.title_img.url }}" title="{{ portfolio.title }}" onclick="location.href='{{ portfolio.url }}';">
+                        </figure>
+                        <p class="tile_text" onclick="location.href='{{ portfolio.url }}';" data-aos="fade-up-left">{{ portfolio.title }}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div>
+        <button type="button" class="btn btn-outline-primary button_contact" onclick="location.href='portfolios';" data-aos="fade-right">Load More</button>
+    </div>
+</div>
+
+<p class="border_skills"></p>
+
+<div class="skills_block">
+    <div class="working_skills_content">
+        <div class="logo_my_all_skill" data-aos="fade-down-right">
+            <p>See My All Skill</p>
+        </div>
+        <div class="title_skill_text" data-aos="fade-right">
+           <p>My Working Skill</p>
+        </div>
+        <div class="content_skill_text" data-aos="fade-up-right">
+            <p>Maybe my skills are not that great yet, but I am constantly developing them!</p>
+        </div>
+    </div>
+    <div class="progress_lines_block">
+        {% for skill,val in Skills.items %}
+            <div class="progress_line_text">
+                <div class="name_skill" data-aos="fade-down-right">
+                    <p> {{ val.0 }} </p>
+                </div>
+                <div class="percent_progress" data-aos="fade-down-left">
+                    <p> {{ val.1 }}%</p>
+                </div>
+            </div>
+
+            <div class="progress_line_BG" data-aos="fade-right">
+                <div class="progress_line_process" style="width: {{ val.1 }}%;">
+
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<p class="border_skills" style="margin-bottom: 50px;"></p>
+
+{% endblock content %}

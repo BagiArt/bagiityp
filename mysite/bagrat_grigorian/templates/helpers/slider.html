@@ -1,0 +1,113 @@
+{% load static %}
+
+<div class="slider-wrap">
+    <div id="card-slider" class="slider">
+
+        <div class="btns" id="btns">
+            <button type="button" class="btn prev" id="btn_prev" style="z-index: 999999;"><img src="{% static 'img/about/icons/arrow_left.png' %}"></button>
+            <span class="space">&nbsp;</span>
+            <button type="button" class="btn next" id="btn_next" style="z-index: 999999;"><img src="{% static 'img/about/icons/arrow_right.png' %}"></button>
+        </div>
+
+        {% for image in images.all_images %}
+            {% if image.product.title == portfolio.title %}
+                <div class="slider-item" id="slider_item">
+                    <div class="animation-card_image">
+                        <img src="{{ image.cover.url }}" alt="" id="img">
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+        
+    </div>
+</div>
+
+<script>
+    var cards = $('#card-slider .slider-item').toArray();
+    var arrayEnd = cards.length - 1;
+    var array = cards;
+    // const elem = document.getElementById('slider_item');
+    var img_aspect_ratio_width = document.getElementById('img').naturalWidth;
+    var img_aspect_ratio_height = document.getElementById('img').naturalHeight;
+    var anim_speed = 0.65;
+    var btn_next = document.getElementById('btn_next');
+    var btn_prev = document.getElementById('btn_prev');
+    onClick_next();
+
+    btn_next.addEventListener("click", onClick_next);
+    btn_prev.addEventListener("click", onClick_prev);
+
+
+    function onClick_next(){
+        sortArray(array);
+        if(array.length >= 4){
+            if(img_aspect_ratio_width < img_aspect_ratio_height){
+                TweenMax.fromTo(array[0], anim_speed, {x:250, y: 50, width: 300, opacity:0.75}, {x:0, y: 150, opacity:0, width: 200, zIndex: 1, delay:0.03, ease: Cubic.easeInOut});
+
+                TweenMax.fromTo(array[1], anim_speed, {x:0, y: 0, opacity:1, zIndex: 2}, {x:250, y: 50, opacity:0.75, width: 300, zIndex: 1, boxShadow: '-5px 8px 8px 0 rgba(82,89,129,0.05)', ease: Cubic.easeInOut});
+
+                TweenMax.to(array[2], anim_speed, {x:0, y:0, boxShadow: '-5px 8px 8px 0 rgba(82,89,129,0.05)', zIndex: 2, opacity: 1, width: 350, ease: Cubic.easeInOut});
+
+                TweenMax.fromTo(array[3], anim_speed, {x:0, y:150, opacity: 0, width: 200, zIndex: 1}, {x:-200, y:50, opacity: 0.75, width: 300, zIndex: 1, ease: Cubic.easeInOut});
+
+                document.getElementById('card-slider').style.height = "900px";
+                document.getElementById('btn_prev').style.paddingLeft = "10%";
+                document.getElementById('btn_next').style.paddingRight = "10%";
+            }
+
+            else{
+                TweenMax.fromTo(array[0], anim_speed, {x:-50, y: 30, width: 800, opacity:0.75}, {x:-280, y: 30, opacity:0, width: 600, zIndex: 1, delay:0.03, ease: Cubic.easeInOut});
+
+                TweenMax.fromTo(array[1], anim_speed, {x:-280, y: 0, opacity:1, zIndex: 2}, {x:-50, y: 30, opacity:0.75, width: 800, zIndex: 1, boxShadow: '-5px 8px 8px 0 rgba(82,89,129,0.05)', ease: Cubic.easeInOut});
+
+                TweenMax.to(array[2], anim_speed, {x:-280, y:0, boxShadow: '-5px 8px 8px 0 rgba(82,89,129,0.05)', zIndex: 2, opacity: 1, width: 900, ease: Cubic.easeInOut});
+
+                TweenMax.fromTo(array[3], anim_speed, {x:-50, y:30, opacity: 0, width: 600, zIndex: 1}, {x:-400, y:30, opacity: 0.75, width: 800, zIndex: 1, ease: Cubic.easeInOut}, );
+
+                document.getElementById('btns').style.paddingBottom = "8%";
+            }
+        }
+    }
+    function onClick_prev(){
+        
+        if(array.length >= 4){
+            if(img_aspect_ratio_width < img_aspect_ratio_height){
+
+                TweenMax.fromTo(array[0], anim_speed, {x:0, y: 150, width: 200, opacity:0}, {x:250, y: 50, opacity:0.75, width: 300, zIndex: 1, delay:0.03, ease: Cubic.easeInOut});
+
+                TweenMax.fromTo(array[1], anim_speed, {x:250, y: 50, opacity:0.75, zIndex: 1, width: 300}, {x:0, y: 0, opacity:1, width: 350, zIndex: 2, boxShadow: '-5px 8px 8px 0 rgba(82,89,129,0.05)', ease: Cubic.easeInOut});
+
+                TweenMax.fromTo(array[2], anim_speed, {x:0, y:0, opacity: 1, width: 350}, {x:-200, y:50, boxShadow: '-5px 8px 8px 0 rgba(82,89,129,0.05)', zIndex: 1, opacity: 0.75, width: 300, ease: Cubic.easeInOut});
+
+                TweenMax.fromTo(array[3], anim_speed, {x:-200, y:50, opacity: 0.75, width: 300, zIndex: 1}, {x:0, y:150, opacity: 0, width: 200, zIndex: 0, ease: Cubic.easeInOut});
+
+                document.getElementById('card-slider').style.height = "900px";
+                document.getElementById('btn_prev').style.paddingLeft = "10%";
+                document.getElementById('btn_next').style.paddingRight = "10%";
+            }
+
+            else{
+                TweenMax.fromTo(array[0], anim_speed, {x:-280, y: 30, width: 600, opacity:0}, {x:-50, y: 30, opacity:0.75, width: 800, zIndex: 1, delay:0.03, ease: Cubic.easeInOut});
+
+                TweenMax.fromTo(array[1], anim_speed, {x:-50, y: 30, opacity:0.75, zIndex: 1}, {x:-280, y: 0, opacity:1, width: 900, zIndex: 2, boxShadow: '-5px 8px 8px 0 rgba(82,89,129,0.05)', ease: Cubic.easeInOut});
+
+                TweenMax.fromTo(array[2], anim_speed, {x:-280, y:0, opacity:1, width: 900, zIndex: 2}, {x:-400, y:30, boxShadow: '-5px 8px 8px 0 rgba(82,89,129,0.05)', zIndex: 1, opacity: 0.75, width: 800, ease: Cubic.easeInOut});
+
+                TweenMax.fromTo(array[3], anim_speed, {x:-400, y:30, opacity: 0.75, width: 800, zIndex: 1}, {x:-50, y:30, opacity: 0, width: 600, zIndex: 0, ease: Cubic.easeInOut}, );
+
+                document.getElementById('btns').style.paddingBottom = "8%";
+            }
+            sortArrayPrev(array);
+        }
+    }
+
+    function sortArray(array){
+        var firstElement = array.shift();
+        array.push(firstElement);
+    }
+    function sortArrayPrev(array){
+        var endElement = array.pop();
+        array.unshift(endElement);
+    }
+
+</script>

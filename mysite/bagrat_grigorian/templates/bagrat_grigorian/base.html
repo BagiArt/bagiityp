@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <link href="{% static 'bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <link href="{% static 'aos-master/dist/aos.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block head %}{% endblock head %}
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div class="shadow">
+        <div class="shadow_point-left">
+        </div>
+        <div class="shadow_point-right">
+        </div>
+    </div>
+
+    <div class="heder" style="{% block style_heder %}{% endblock style_heder %}">
+        <div class="heder_menu">
+            <ul>
+                <li><a class="heder_buttons" href="about" {% block menue1 %}{% endblock %}>About</a></li>
+                <li><a class="heder_buttons" href="portfolios" {% block menue2 %}{% endblock %}>Portfolio</a></li>
+                <li><a class="heder_buttons" href="contact" {% block menue3 %}{% endblock %}>Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="block_content" style="display: flex; flex-direction: column; width: 100%; align-items: center;">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <script src="{% static 'aos-master/dist/aos.js'%}"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 600,
+            delay: 300,
+        });
+    </script>
+    
+</body>
+</html>

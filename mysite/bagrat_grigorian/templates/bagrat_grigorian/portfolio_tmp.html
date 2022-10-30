@@ -1,0 +1,72 @@
+{% extends 'bagrat_grigorian/base.html' %}
+
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/portfolio_tmp.css' %}"> 
+<link rel="stylesheet" href="{% static 'css/helpers/slider.css' %}">
+{% endblock %}
+
+{% block title %}{{ portfolio.title }}{% endblock title %}
+
+{% block menue2 %}style="color: rgba(33, 108, 255, 1); text-shadow: 0px 0px 20px rgb(89, 144, 253);"{% endblock menue2 %}
+
+{% block style_heder %}visibility: hidden;{% endblock style_heder %}
+
+{% block content %}
+
+    <div class="arrow_back_heder">
+        <img src="{% static 'img/about/icons/arrow_back.png' %}" style="object-fit: contain; width: 50px;" onclick="location.href='portfolios'">
+    </div>
+
+    <div class="main_block">
+        <div class="title_img_block">
+            <img src="{{ portfolio.title_img.url }}">
+        </div>
+    </div>
+    
+    <p class="border_skills" style="margin-bottom: 50px; margin-top: 20px;"></p>
+
+    <div class="description_main_conteiner">
+        <div class="description_left_block">
+            <div class="title_left_block">
+                <p>{{ portfolio.title }}</p>
+            </div>
+            <div class="body_left_block">
+                <div class="line">
+                    <p class="content" data-aos="fade-left">Date:</p>
+                    <p class="content" data-aos="fade-right">{{ portfolio.date }}</p>
+                </div>
+                <p class="border_line"></p>
+                <div class="line">
+                    <p class="content" data-aos="fade-right">Client:</p>
+                    <p class="content" data-aos="fade-left">{{ portfolio.client }}</p>
+                </div>
+                <p class="border_line"></p>
+                <div class="line">
+                    <p class="content" data-aos="fade-left">Category:</p>
+                    <p class="content" data-aos="fade-right">{{ portfolio.category }}</p>
+                </div>
+                <p class="border_line"></p>
+                <button type="button" class="btn btn-outline-primary button_project" onClick="location.href='{{ portfolio.progect_url }}';">View Project</button>
+            </div>
+        </div>
+        <div class="description_right_block">
+            <div class="description_heder" data-aos="fade-left">
+                <p>{{ portfolio.description }}</p>
+            </div>
+            <div class="description_body" data-aos="fade-right">
+                <p>{{ portfolio.description_numiration }}</p>
+            </div>
+            <div class="description_futter" data-aos="fade-left">
+                <p>{{ portfolio.description_futter }}</p>
+            </div>
+        </div>
+    </div>
+    <p class="border_skills" style="margin-bottom: 50px; margin-top: 20px;"></p>
+
+    <div style="width: 100%; height: 770px; display: flex; justify-content: center; position: relative;">
+        {% include 'helpers/slider.html' %}
+    </div>
+
+{% endblock content %}

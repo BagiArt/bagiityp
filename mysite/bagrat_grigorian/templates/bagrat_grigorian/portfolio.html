@@ -1,0 +1,34 @@
+{% extends 'bagrat_grigorian/base.html' %}
+
+{% load static %}
+
+{% block head %} <link rel="stylesheet" href="{% static 'css/portfolio.css' %}"> {% endblock %}
+
+{% block title %}Portfolio{% endblock title %}
+
+{% block menue2 %}style="color: rgba(33, 108, 255, 1); text-shadow: 0px 0px 20px rgb(89, 144, 253);"{% endblock menue2 %}
+
+{% block content %}
+
+<div class="portfolio_content_main">
+   
+    <h1 style="color: white; margin-bottom: 100px;">Check My Recent Works!</h1>
+    
+    <div class="tile_block_main">
+        <div class="tile_image_main">
+            {% for portfolio in portfolios %}
+                <div class="tile">
+                    <figure class="tile_image_block">
+                        <img src="{{ portfolio.title_img.url }}" title="{{ portfolio.title }}" onclick="location.href='{{ portfolio.url }}';">
+                    </figure>
+                    <p class="tile_text" onclick="location.href='{{ portfolio.url }}';">{{ portfolio.title }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<p class="border_skills" style="margin-bottom: 50px;"></p>
+
+{% endblock content %}
+

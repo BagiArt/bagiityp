@@ -1,0 +1,108 @@
+.arrow_back_heder {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+  padding: 50px 50px 50px 50px;
+  cursor: pointer;
+}
+
+.main_block {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.main_block .title_img_block {
+  background-image: linear-gradient(90deg, rgba(187, 41, 255, 0.909), rgba(36, 105, 255, 0.909));
+  z-index: 999999;
+  width: 80%;
+  aspect-ratio: 4/2;
+  object-fit: contain;
+  border-radius: 10px;
+}
+.main_block .title_img_block img {
+  width: 100%;
+  padding: 2px;
+  object-fit: contain;
+  border-radius: 13px;
+}
+
+.border_skills {
+  width: 90%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.description_main_conteiner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 80%;
+  max-width: 1304px;
+}
+.description_main_conteiner .description_left_block {
+  flex: 2;
+  color: #fff;
+}
+.description_main_conteiner .description_left_block .title_left_block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+.description_main_conteiner .description_left_block .body_left_block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.description_main_conteiner .description_left_block .body_left_block .line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.description_main_conteiner .description_left_block .body_left_block .line .content {
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+}
+.description_main_conteiner .description_left_block .body_left_block .button_project {
+  background-image: linear-gradient(90deg, rgb(189, 41, 255), rgb(36, 107, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+.description_main_conteiner .description_left_block .body_left_block .button_project:hover {
+  background-image: linear-gradient(90deg, rgba(187, 41, 255, 0.238), rgba(36, 105, 255, 0.245));
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+}
+.description_main_conteiner .description_left_block .body_left_block .border_line {
+  width: 95%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.149);
+  margin: 10px 0px;
+  padding-top: 0;
+}
+.description_main_conteiner .description_right_block {
+  flex: 3;
+  margin-top: 30px;
+  padding-left: 50px;
+  font-size: 20px;
+  color: #fff;
+}
+.description_main_conteiner .description_right_block .description_body {
+  white-space: pre-line;
+  margin-left: 30px;
+}
+
+/*# sourceMappingURL=portfolio_tmp.css.map */

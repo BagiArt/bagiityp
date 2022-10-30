@@ -1,0 +1,33 @@
+{% extends 'bagrat_grigorian/base.html' %}
+
+{% load static %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block head %} <link rel="stylesheet" href="{% static 'css/contact.css' %}">  {% endblock head %}
+
+{% block menue3 %}style="color: rgba(33, 108, 255, 1); text-shadow: 0px 0px 20px rgb(89, 144, 253);"{% endblock menue3 %}
+
+{% block content %}
+
+    <div class="block_content">
+        <div class="left_block">
+            <p class="title">Contact Me:</p>
+            <p class="content" data-aos="fade-right">Phone: +7(919)-422-23-97</p>
+            <p class="content" data-aos="fade-left">Telegram, WhatsApp: +7(919)-422-23-97</p>
+            <p class="content" data-aos="fade-right">Email: Bagi.itc24@gmail.com</p>
+            <p class="content" data-aos="fade-left">Location: Saint-Petersburg, Russia</p>
+        </div>
+        <div class="right_block">
+            <img src="{% static 'img/about/about_block.png' %}">
+        </div>
+    </div>
+    <p class="border_skills" style="margin-bottom: 50px;"></p>
+
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10367.54631337256!2d30.266235989051676!3d59.93847694522967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46963125b981bb17%3A0x31620e280f23d816!2sVasileostrovskaya!5e0!3m2!1sen!2sru!4v1666744735075!5m2!1sen!2sru" width="1338" height="403" style="border:0; border-radius: 10px; z-index: 5; width: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    
+    <p class="border_skills" style="margin-bottom: 50px; margin-top: 50px;"></p>
+
+{% endblock content %}
