@@ -1,8 +1,5 @@
 from distutils.command.upload import upload
-from operator import mod
-from unicodedata import category
 from django.db import models
-from numpy import save, var
 
 class PageMeta(models.Model):
     url = models.TextField(null=False, blank=True, unique=True)
@@ -31,13 +28,6 @@ class Skills():
             'git': ['GIT', 30],
         },
     }
-
-# class Tiles(models.Model):
-#     title = models.TextField()
-#     cover = models.ImageField(upload_to = 'images/')
-
-#     def __str__(self):
-#         return self.title
 
 class PortfolioTmp(models.Model):
     title_img = models.ImageField(upload_to = 'images/portfolio_tmp', null=False, blank=False)
