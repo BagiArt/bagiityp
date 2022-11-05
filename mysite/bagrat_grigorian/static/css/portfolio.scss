@@ -20,6 +20,10 @@
             grid-template-rows: repeat(auto, 1fr);
             grid-gap: 15px;
             height: 100%;
+            @media (max-width: 760px){
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat(auto, 1fr);
+            }
             .tile_image_main__item{
                 grid-row: 3;
             }
@@ -44,6 +48,31 @@
                 margin: 10px;
                 border-radius: 10px;
                 cursor: pointer;
+                @media (max-width: 1120px){
+                    width: 282px;
+                    height: auto;
+                    object-fit: inherit;
+                }
+                @media (max-width: 850px){
+                    width: 200px;
+                    height: auto;
+                    object-fit: inherit;
+                }
+                @media(max-width: 760px){
+                    width: 686px;
+                    height: auto;
+                    object-fit: inherit;
+                }
+                @media(max-width: 450px){
+                    width: 302px;
+                    height: auto;
+                    object-fit: inherit;
+                }
+                @media(max-width: 330px){
+                    width: 282px;
+                    height: auto;
+                    object-fit: inherit;
+                }
                 img{
                     width: 382px;
                     height: 213px;
@@ -51,6 +80,36 @@
                     padding: 0;
                     margin: 0;
                     border-radius: 10px;
+                    @media (max-width: 1120px){
+                        width: 280px;
+                        height: auto;
+                        padding: 1px 0 1px 0;
+                        object-fit: inherit;
+                    }
+                    @media (max-width: 850px){
+                        width: 198px;
+                        height: auto;
+                        padding: 1px 0 1px 0;
+                        object-fit: inherit;
+                    }
+                    @media(max-width: 760px){
+                        width: 684px;
+                        height: auto;
+                        padding: 1px 0 1px 0;
+                        object-fit: inherit;
+                    }
+                    @media (max-width: 450px) {
+                        width: 300px;
+                        height: auto;
+                        padding: 1px 0 1px 0;
+                        object-fit: inherit;
+                    }
+                    @media (max-width: 320px) {
+                        width: 280px;
+                        height: auto;
+                        padding: 1px 0 1px 0;
+                        object-fit: inherit;
+                    }
                 }
             }
         }
