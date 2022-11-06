@@ -74,7 +74,7 @@
                 {% for image in images.all_images %}
                     {% if image.product.title == portfolio.title %}
                         <div class="slider">
-                            <figure class="slider_image">
+                            <figure class="slider_image" data-aos="fade-down-left">
                                 <img src="{{ image.cover.url }}" id="img">
                             </figure>
                         </div>
