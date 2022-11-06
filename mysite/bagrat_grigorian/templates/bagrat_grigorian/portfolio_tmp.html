@@ -65,8 +65,25 @@
     </div>
     <p class="border_skills" style="margin-bottom: 50px; margin-top: 20px;"></p>
 
-    <div style="width: 100%; height: 770px; display: flex; justify-content: center; position: relative;">
+    <div class="slider_comp" style="width: 100%; height: 770px; position: relative;">
         {% include 'helpers/slider.html' %}
     </div>
+    <div class="slider_mobile">
+        <div class="slider_block_main">
+            <div class="slider_image_main">
+                {% for image in images.all_images %}
+                    {% if image.product.title == portfolio.title %}
+                        <div class="slider">
+                            <figure class="slider_image">
+                                <img src="{{ image.cover.url }}" id="img">
+                            </figure>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
 
 {% endblock content %}
