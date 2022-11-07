@@ -24,6 +24,7 @@
   .block_content .left_block {
     align-items: center;
     justify-content: center;
+    padding-left: 0;
   }
 }
 .block_content .left_block .title {
