@@ -8,6 +8,7 @@ body{
     background-color: $bgcolor;
     position: relative;
     font-family: 'IBM Plex Serif', serif;
+    overflow-x: hidden;
 }
 
 .shadow{
@@ -112,8 +113,11 @@ body{
 }
 
 .block_content{
+    
+    height: auto;
     @media(max-width: 1000px){
         align-items: center;
+        overflow-x: hidden;
     }
 }
 

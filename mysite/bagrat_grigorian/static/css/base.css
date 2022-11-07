@@ -6,6 +6,7 @@ body {
   background-color: black;
   position: relative;
   font-family: "IBM Plex Serif", serif;
+  overflow-x: hidden;
 }
 
 .shadow {
@@ -111,9 +112,13 @@ body {
   transform-origin: right;
 }
 
+.block_content {
+  height: auto;
+}
 @media (max-width: 1000px) {
   .block_content {
     align-items: center;
+    overflow-x: hidden;
   }
 }
 

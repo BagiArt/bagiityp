@@ -14,7 +14,6 @@
 {% block style_heder %}visibility: hidden;{% endblock style_heder %}
 
 {% block content %}
-
     <div class="arrow_back_heder">
         <img src="{% static 'img/about/icons/arrow_back.png' %}" style="object-fit: contain; width: 50px;" onclick="location.href='portfolios'">
     </div>
@@ -73,7 +72,7 @@
             <div class="slider_image_main">
                 {% for image in images.all_images %}
                     {% if image.product.title == portfolio.title %}
-                        <div class="slider">
+                        <div class="slider" onclick=>
                             <figure class="slider_image" data-aos="fade-down-left">
                                 <img src="{{ image.cover.url }}" id="img">
                             </figure>
@@ -83,7 +82,6 @@
             </div>
         </div>
     </div>
-
 
 
 {% endblock content %}

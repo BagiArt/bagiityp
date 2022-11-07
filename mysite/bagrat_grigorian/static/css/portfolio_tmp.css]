@@ -1,10 +1,3 @@
-.boddy {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: auto;
-}
-
 .arrow_back_heder {
   display: flex;
   flex-direction: row;
@@ -120,7 +113,6 @@
 .description_main_conteiner .description_right_block .description_body {
   white-space: pre-line;
   margin-left: 30px;
-  overflow: none;
 }
 
 .slider_comp {
@@ -130,6 +122,7 @@
 @media (max-width: 1250px) {
   .slider_comp {
     display: none;
+    overflow-x: hidden;
   }
 }
 
@@ -188,4 +181,4 @@
   }
 }
 
-/*# sourceMappingURL=portfolio_tmp.css.map */
+/*# sourceMappingURL=portfolio_tmp.css%5D.map */
