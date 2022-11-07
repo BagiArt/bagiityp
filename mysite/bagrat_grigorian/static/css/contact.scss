@@ -20,6 +20,7 @@
         padding-left: 8%;
         @media(max-width: 1000px){
             align-items: center;
+            justify-content: center;
         }
         .title{
             color: #fff;
@@ -31,15 +32,18 @@
         .content{
             font-size: 32px;
             @media(max-width: 1000px){
-                font-size: 24px;
+                font-size: 20px;
             }
         }
     }
     .right_block{
         width: 100%;
         flex: 1;
-        z-index: 10;
+        z-index: 1;
         background-color: black;
+        @media (max-width: 1400px){
+            z-index:auto;
+        }
         @media(max-width: 1000px){
             flex: 0;
             visibility: collapse;
